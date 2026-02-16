@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 export default function Footer() {
     return (
@@ -25,21 +26,7 @@ export default function Footer() {
             >
                 {/* Logo / Brand */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        style={{ opacity: 0.6 }}
-                    >
-                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                        <circle cx="9" cy="9" r="2" />
-                        <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-                    </svg>
+                    <Image src="/logo.png" alt="Emma logo" width={20} height={20} />
                     <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>
                         Blog Thumbnail AI
                     </span>

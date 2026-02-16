@@ -285,8 +285,9 @@ export default function AetherHero({
                         <p
                             style={{
                                 marginTop: '1rem',
-                                fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+                                fontSize: 'clamp(0.8rem, 1.5vw, 1rem)',
                                 lineHeight: 1.6,
+                                whiteSpace: 'pre-line',
                                 opacity: 0.9,
                                 textShadow: '0 4px 24px rgba(0,0,0,0.35)',
                                 maxWidth: 900,

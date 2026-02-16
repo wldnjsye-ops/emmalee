@@ -10,11 +10,13 @@ export default function Home() {
     <main>
       <Navbar />
       <AetherHero
-        title="Blog Thumbnail AI"
-        subtitle="블로그 글만 입력하면, AI가 완벽한 썸네일을 자동으로 만들어드립니다. 디자인 경험 없이도 클릭을 부르는 썸네일을 몇 초 만에."
-        ctaLabel="썸네일 만들기"
+        title="Emma's Blog Thumbnail AI"
+        subtitle={
+          '블로그 글만 입력하면, AI가 완벽한 썸네일을 자동으로 만들어드립니다.\n문구와 디자인 경험 없이도 클릭을 부르는 썸네일을 몇 초 만에.'
+        }
+        ctaLabel="지금 시작하기"
         ctaHref="#generate"
-        secondaryCtaLabel="서비스 소개"
+        secondaryCtaLabel="더 알아보기"
         secondaryCtaHref="#about"
         align="center"
       />
