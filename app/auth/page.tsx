@@ -3,14 +3,22 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { useAuth } from '@/components/auth/auth-context';
 
 const YOUTUBE_EMBED_URL = 'https://www.youtube.com/embed/3wDb5OEq5T4?si=s7W0jF1s13UULL-D';
 
 export default function AuthPage() {
+  const router = useRouter();
   const { user, isLoading, errorMessage, signInWithGoogle, signOut } = useAuth();
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [localError, setLocalError] = React.useState('');
+
+  React.useEffect(() => {
+    if (!isLoading && user) {
+      router.replace('/dashboard');
+    }
+  }, [isLoading, user, router]);
 
   const handleGoogleLogin = async () => {
     setLocalError('');
@@ -58,7 +66,13 @@ export default function AuthPage() {
         <section className="right-pane">
           <div className="card">
             <Link href="/" className="logo">
-              <Image src="/logo.png" alt="Emma logo" width={28} height={28} className="logo-image" />
+              <Image
+                src="/logo.png"
+                alt="Emma logo"
+                width={28}
+                height={28}
+                className="logo-image"
+              />
               <span>Blog Thumbnail AI</span>
             </Link>
 
@@ -207,12 +221,7 @@ export default function AuthPage() {
           text-transform: lowercase;
           color: rgba(255, 255, 255, 0.94);
           text-shadow: 0 10px 35px rgba(0, 0, 0, 0.45);
-          font-family:
-            'Bebas Neue',
-            'Anton',
-            'Space Grotesk',
-            'Arial Black',
-            sans-serif;
+          font-family: 'Bebas Neue', 'Anton', 'Space Grotesk', 'Arial Black', sans-serif;
         }
 
         .right-pane {

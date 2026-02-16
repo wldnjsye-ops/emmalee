@@ -112,36 +112,64 @@ export default function Navbar() {
 
       <div style={{ justifySelf: 'end' }}>
         {user ? (
-          <button
-            type="button"
-            onClick={() => void signOut()}
-            disabled={isLoading}
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px',
-              padding: '8px 20px',
-              borderRadius: 10,
-              background: '#ffffff',
-              color: '#000000',
-              textDecoration: 'none',
-              fontSize: '0.85rem',
-              fontWeight: 600,
-              border: 'none',
-              cursor: isLoading ? 'not-allowed' : 'pointer',
-              transition: 'opacity 0.2s, transform 0.2s',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.opacity = '0.88';
-              e.currentTarget.style.transform = 'translateY(-1px)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.opacity = '1';
-              e.currentTarget.style.transform = 'translateY(0)';
-            }}
-          >
-            Log out
-          </button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+            <Link
+              href="/dashboard"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                padding: '8px 20px',
+                borderRadius: 10,
+                background: '#ffffff',
+                color: '#000000',
+                textDecoration: 'none',
+                fontSize: '0.85rem',
+                fontWeight: 600,
+                transition: 'opacity 0.2s, transform 0.2s',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.opacity = '0.88';
+                e.currentTarget.style.transform = 'translateY(-1px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.opacity = '1';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}
+            >
+              Dashboard
+            </Link>
+            <button
+              type="button"
+              onClick={() => void signOut()}
+              disabled={isLoading}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                padding: '8px 14px',
+                borderRadius: 10,
+                background: 'transparent',
+                color: 'rgba(255,255,255,0.82)',
+                textDecoration: 'none',
+                fontSize: '0.82rem',
+                fontWeight: 600,
+                border: '1px solid rgba(255,255,255,0.18)',
+                cursor: isLoading ? 'not-allowed' : 'pointer',
+                transition: 'opacity 0.2s, transform 0.2s',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.opacity = '0.88';
+                e.currentTarget.style.transform = 'translateY(-1px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.opacity = '1';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}
+            >
+              Log out
+            </button>
+          </div>
         ) : (
           <Link
             href="/auth"
@@ -156,6 +184,8 @@ export default function Navbar() {
               textDecoration: 'none',
               fontSize: '0.85rem',
               fontWeight: 600,
+              border: 'none',
+              cursor: isLoading ? 'not-allowed' : 'pointer',
               transition: 'opacity 0.2s, transform 0.2s',
             }}
             onMouseEnter={(e) => {
